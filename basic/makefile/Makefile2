@@ -1,0 +1,20 @@
+# 使用变量
+
+OBJS = get.o sum.o val.o \
+	main.o
+EXE = main
+
+${EXE}:${OBJS}
+	gcc -o ${EXE} ${OBJS}
+
+main.o:main.c
+	gcc -c main.c
+get.o:get.h get.c
+	gcc -c get.c
+sum.o:sum.h sum.c
+	gcc -c sum.c
+val.o:val.h val.c
+	gcc -c val.c
+
+clean:
+	rm -rf ${EXE} ${OBJS}
